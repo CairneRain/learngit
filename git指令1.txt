@@ -1,0 +1,52 @@
+克隆代码
+
+git clone git@gitee.com:lvlumi/wyb.git
+
+
+
+修改
+
+//查看状态
+git status
+
+//添加修改
+git add
+
+
+//提交分支
+git commit -m "修复XXbug"
+
+//分支合并
+git pull <远程主机名> <远程分支名> 默认git pull origin master
+
+//推送修改主库
+git push <远程主机名> <远程分支名> 默认git push origin master
+
+更新代码
+
+//查看分支
+git remote -v
+
+//从远程获取最新版本到本地
+git fetch origin master:temp
+
+//比较本地仓库与下载的temp分支
+git diff temp
+
+//合并temp分支到本地的master分支
+git merge temp
+
+//删除temp分支
+git branch -d temp
+
+//备份本地
+git stash
+
+//读取最新备份
+git stash pop
+
+//读取备份列表
+git stash list
+
+//清楚备份
+git stash clear
