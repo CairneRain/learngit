@@ -1,6 +1,8 @@
 # Git
 
 > Rui Chen
+>
+> note from free tutorial of pluralsight: [How git works]( https://www.pluralsight.com/courses/how-git-works)
 
 ## Introduction
 
@@ -103,4 +105,54 @@ git tag release //no message
 ```
 
 ###  Distributed Version Control
+
+```git
+git clone abc@xxx
+```
+
+> git clone command only copy one branch
+
+Every repo in git is peer. It does not have a centralized repo.
+
+.git/config contains other repository's information.
+
+.git/refs/remotes will save the remote HEAD
+
+``` git show-ref main``` show all branches contains name main
+
+- remote branches is the same thing compared to local branches
+
+```git
+git push // send new local commits to the remote repo
+```
+
+#### conflict
+
+other commits updated before the my local commits push.
+
+- ```git push -f ``` : force push, cover the others' commits (not good idea)
+
+- git fetch and git merge : ``` git pull ```, then push
+
+  (never rebase shared commits, will cause rebase revisit)
+
+  ![rebase revisit.png](./img/rebase revisit.png)
+
+#### GitHub Features
+
+- Fork
+
+  clone a git repo with no privilege on my account (**origin**).
+
+  mark the repo with no privilege as (**upstream**)
+
+  when upstream has new feature, pull to local, then push to the origin. (but we cannot directly push to the upstream from the local)
+
+- Pull Requests
+
+  send the origin new commits to the upstream repository
+
+  ![fork and pr](./img/fork and pr.png)
+
+
 
